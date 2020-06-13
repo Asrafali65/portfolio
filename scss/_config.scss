@@ -1,0 +1,88 @@
+// colors
+$white: #f0f0f0;
+$black: #303030;
+$pink: #fc5185;
+$gray: #333333;
+
+// font family
+$muli: "Muli", sans-serif;
+
+// font weight
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 800,
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $white;
+  font-family: $muli;
+  color: $black;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: map-get($font-weights, bold);
+}
+
+@mixin flex-center($align, $justify, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+// mobile device
+@mixin sm-device {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+// tablet device
+@mixin md-device {
+  @media (min-width: 600px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+// large device
+@mixin lg-device {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+// xtra large device
+@mixin xl-device {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+// gsap
+
+.intro-div-gsap {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $black;
+  z-index: 12;
+}
